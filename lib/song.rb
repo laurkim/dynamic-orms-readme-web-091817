@@ -1,10 +1,12 @@
 require_relative "../config/environment.rb"
 require 'active_support/inflector'
+require 'pry'
 
 class Song
 
 
-  def self.table_name
+  def self.table_name #creates table name from Class name without hard coding
+    # binding.pry
     self.to_s.downcase.pluralize
   end
 
@@ -60,5 +62,5 @@ class Song
 
 end
 
-
-
+song = Song.new
+song.table_name
